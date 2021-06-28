@@ -39,7 +39,7 @@ module Filepreviews
     # @param params [Hash<Symbol>] :url and :metadata
     # @return [Hash<Symbol>] processed parameters for http request
     def process_params(params)
-      parameters = { url: CGI.unescape(params.url) }
+      parameters = { url: params.url }
 
       if params.metadata
         parameters[:metadata] = extract_metadata(params.metadata)
